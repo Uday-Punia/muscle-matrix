@@ -1,17 +1,492 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="./Images/Membership.png">
-    <title>Membership</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body style="background-image: linear-gradient(135deg, rgba(107, 107, 107,0.06) 0%, rgba(107, 107, 107,0.06) 50%,rgba(202, 202, 202,0.06) 50%, rgba(202, 202, 202,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20)); background-size: 30px 30px;">
-    <!-- Services Section -->
-<div class="container my-5">
-    <h1 class="display-1 text-center text-white bg-dark border rounded-5 py-3 fw-bolder">💰Pricing💵</h1>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Matrix - Premium Plans</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff6b35;
+            --secondary: #2ec4b6;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h1 {
+            font-weight: 800;
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header {
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+        
+        .pricing-price .currency {
+            font-size: 1.5rem;
+            vertical-align: super;
+        }
+        
+        .pricing-price .period {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        
+        .pricing-features {
+            padding: 1.5rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-cta {
+            padding: 0 1.5rem 2rem;
+        }
+        
+        .btn-pricing {
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-free {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .btn-free:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-pro {
+            background: var(--primary);
+            border: none;
+            color: white;
+        }
+        
+        .btn-pro:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-elite {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-elite:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .guarantee-badge {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 15px;
+            background: rgba(46, 196, 182, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(46, 196, 182, 0.3);
+        }
+        
+        .guarantee-badge i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .faq-section {
+            margin-top: 5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .section-title h1 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-card {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Header Section -->
+        <div class="section-title">
+            <h1>Unlock Your Potential</h1>
+            <p>Choose the plan that fits your fitness journey. All plans include access to our exclusive exercise library and community support.</p>
+        </div>
+        
+        <!-- Pricing Cards -->
+        <div class="row g-4">
+            <!-- Free Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>0
+                        </div>
+                        <p>Perfect for trying out the basics</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>3 Basic Workout Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Exercise Library (Demo Videos)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Track up to 5 workouts per month</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Standard Email Support</span>
+                        </div>
+                        <div class="feature-item text-muted">
+                            <i class="fas fa-times"></i>
+                            <span>Personalized Plan Finder</span>
+                        </div>
+                        <div class="feature-item text-muted">
+                            <i class="fas fa-times"></i>
+                            <span>Progress Tracking Charts</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <button class="btn btn-pricing btn-free">Get Started for Free</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pro Plan (Most Popular) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Pro Builder</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>19<span class="period">/month</span>
+                        </div>
+                        <p>Everything you need to build muscle effectively</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span><strong>All</strong> Workout Plans (30+)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Personalized Plan Finder Quiz</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Workout Tracker</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Progress Analytics & Charts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Save & Customize Workouts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority Email & Chat Support</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <button class="btn btn-pricing btn-pro">Start 7-Day Free Trial</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Elite Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Elite Coach</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>49<span class="period">/month</span>
+                        </div>
+                        <p>Premium coaching for maximum results</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Everything in Pro</strong></span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom Workout Plan</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Monthly 1-on-1 Video Coaching</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Direct Messenger with Coach</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Personalized Nutrition Guidance</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Form Analysis & Technique Review</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <button class="btn btn-pricing btn-elite">Go Elite & Get Custom Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Guarantee Badge -->
+        <div class="guarantee-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>30-Day Money-Back Guarantee. If you're not satisfied, we'll refund your payment. No questions asked.</span>
+        </div>
+        
+        <!-- Testimonials -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Pro Builder plan saved me so much time and guesswork. I finally know exactly what to do in the gym and my gains have been incredible!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div>
+                            <strong>Mike Johnson</strong>
+                            <div class="text-muted">Transformed 22 lbs in 4 months</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a beginner, the personalized plan finder was a game-changer. The Elite coaching took my form to the next level. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div>
+                            <strong>Sarah Roberts</strong>
+                            <div class="text-muted">Gained 8 lbs of muscle in 12 weeks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            <span>Can I cancel my subscription anytime?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer collapse show" id="faq1">
+                            Yes, you can cancel your subscription at any time from your account settings. There are no cancellation fees.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            <span>What's included in the free trial?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer collapse" id="faq2">
+                            The 7-day free trial gives you full access to all Pro Builder features. You won't be charged until the trial ends.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            <span>Do you offer student discounts?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer collapse" id="faq3">
+                            Yes! We offer a 25% discount for students. Contact our support team with proof of enrollment to get your discount code.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            <span>How do the custom workout plans work?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer collapse" id="faq4">
+                            For Elite members, we create a completely personalized plan based on your goals, experience level, available equipment, and schedule. This includes exercise selection, sets, reps, and progression strategy.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation for FAQ toggles
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const icon = item.querySelector('i');
+                if (icon.classList.contains('fa-chevron-down')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Simple button click handlers for demonstration
+        document.querySelectorAll('.btn-pricing').forEach(button => {
+            button.addEventListener('click', function() {
+                const planName = this.closest('.pricing-card').querySelector('.pricing-title').textContent;
+                alert(`Thank you for your interest in the ${planName}! This would redirect to a checkout page in a real application.`);
+            });
+        });
+    </script>
+</body>
 </html>
