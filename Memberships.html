@@ -14,14 +14,16 @@
     .card-hover:hover {
         background-color: black !important;
         border-color: yellow !important;
-        transition: 0.6s ease;
+        transition: 0.3s ease;
         cursor: pointer;
-        transform: scale(1.1);
+        transform: scale(1.03);
     }
-    .currency{
-             vertical-align: super;
+
+    .currency {
+        vertical-align: super;
     }
-    .Price{
+
+    .Price {
         font-size: 30px;
     }
 </style>
@@ -36,43 +38,195 @@
             exclusive exercise library and community support.</p>
     </div>
     <div class="container my-5">
-        <div class="row justify-content-center">
-        <div class="card bg-dark text-white col-sm-4 col-md-4 border border-1 rounded-5 card-hover h-100">
-            <div class="card-body">
-                <h3 class="card-title text-center fw-bolder mb-4">Starter</h3>
-                <h4 class="card-subtitle mb-4 text-center text-white "><span class="currency">$</span><span class="Price">0</span></h4>
-                <p class="card-text text-center lead mb-4">Perfect for trying out the basics</p>
-                <hr>
-                <div class="pricing-features px-2">
-                    <div class="feature-item">
-                        <i class="fas fa-check p-2"></i>
-                        <span class="text-warning fs-5">3 Basic Workout Plans</span>
+        <div class="row g-3">
+            <!-- Card 1 -->
+            <div class="card bg-dark text-white  col-md-4 border border-1 rounded-5 card-hover h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center fw-bolder mb-4">Starter</h3>
+                    <h4 class="card-subtitle mb-4 text-center text-white "><span class="currency">$</span><span
+                            class="Price">0</span></h4>
+                    <p class="card-text text-center lead mb-4">Perfect for trying out the basics</p>
+                    <hr>
+                    <div class="pricing-features px-2">
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">3 Basic Workout Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Exercise Library (Demo Videos)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Track up to 5 workouts per month</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Standard Email Support</span>
+                        </div>
+                        <div class="feature-item text-white">
+                            <i class="fas fa-times p-2"></i>
+                            <span class="text-success fs-5">Personalized Plan Finder</span>
+                        </div>
+                        <div class="feature-item text-white">
+                            <i class="fas fa-times p-2"></i>
+                            <span class="text-success fs-5">Progress Tracking Charts</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check p-2"></i>
-                        <span class="text-warning fs-5">Exercise Library (Demo Videos)</span>
+                    <button class="btn btn-outline-primary mx-auto d-block mt-5 mb-2">Get Started For Free</button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card bg-dark text-white  col-md-4 border border-2 border-warning rounded-5 card-hover h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <button class="btn btn-warning btn-sm fw-bold">Most Popular</button>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check p-2"></i>
-                        <span class="text-warning fs-5">Track up to 5 workouts per month</span>
+                    <h3 class="card-title text-center fw-bolder mb-4 ">Pro</h3> <!-- Changed to Pro -->
+                    <h4 class="card-subtitle mb-4 text-center text-white "><span class="currency">$</span><span
+                            class="Price">19</span><small>/month</small></h4>
+                    <p class="card-text text-center lead mb-4">Everything you need to build muscle</p>
+                    <hr>
+                    <div class="pricing-features px-2">
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">All Workout Plans (30+)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Personalized Plan Finder</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Advanced Workout Tracker</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Progress Tracking Charts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Save & Customize Workouts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Priority Support</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check p-2"></i>
-                        <span class="text-warning fs-5">Standard Email Support</span>
+                    <button class="btn btn-outline-warning mx-auto d-block mt-5 mb-2">Start 7-Day Trial</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card bg-dark text-white  col-md-4 border border-1 rounded-5 card-hover h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center fw-bolder mb-4">Elite</h3> <!-- Changed to Elite -->
+                    <h4 class="card-subtitle mb-4 text-center text-white "><span class="currency">$</span><span
+                            class="Price">49</span><small>/month</small></h4>
+                    <p class="card-text text-center lead mb-4">Premium coaching for maximum results</p>
+                    <hr>
+                    <div class="pricing-features px-2">
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Everything in Pro</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Custom Workout Plan</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">1-on-1 Video Coaching</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Direct Coach Access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Nutrition Guidance</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check p-2"></i>
+                            <span class="text-warning fs-5">Form Analysis</span>
+                        </div>
                     </div>
-                    <div class="feature-item text-white">
-                        <i class="fas fa-times p-2"></i>
-                        <span class="text-success fs-5">Personalized Plan Finder</span>
-                    </div>
-                    <div class="feature-item text-white">
-                        <i class="fas fa-times p-2"></i>
-                        <span class="text-success fs-5">Progress Tracking Charts</span>
+                    <button class="btn btn-outline-success mx-auto d-block mt-5 mb-2">Go Elite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-white bg-dark border border-1 text-white text-center rounded-5">
+        <p class="fs-4 fw-bolder py-3">
+            🛡️30-Day Money-Back Guarantee. If you're not satisfied, we'll refund your payment. No questions asked.</p>
+    </div>
+    <h1 class="display-3 text-center text-primary m-5 fw-bolder text-decoration-underline">Frequently Asked Questions
+    </h1>
+    <div class="container mb-5">
+        <!-- accordion-1 -->
+        <div class="accordion text-white" id="accordionExample">
+            <div class="accordion-item bg-dark text-white">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-black text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Can I cancel my subscription anytime?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Yes, you can cancel your subscription at any time from your account settings. There are
+                            no cancellation fees.</strong>
                     </div>
                 </div>
-                <button class="btn btn-outline-primary mx-auto d-block mt-5 mb-2">Get Started For Free</button>
             </div>
-            
-        </div>
+            <!-- accordion-2 -->
+            <div class="accordion-item bg-dark text-white">
+                <h2 class="accordion-header">
+                    <button class="accordion-button bg-black text-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What's included in the free trial?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>The 7-day free trial gives you full access to all Pro Builder features. You won't be
+                            charged until the trial ends.</strong>
+                    </div>
+                </div>
+            </div>
+            <!-- accordion-3 -->
+            <div class="accordion-item bg-dark text-white">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-black text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Do you offer student discounts?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Yes! We offer a 25% discount for students. Contact our support team with proof of
+                            enrollment to get your discount code.</strong>
+                    </div>
+                </div>
+            </div>
+            <!-- accordion-4 -->
+            <div class="accordion-item bg-dark text-white">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-black text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                        aria-controls="collapseFour">
+                        How do the custom workout plans work?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>For Elite members, we create a completely personalized plan based on your goals,
+                            experience level, available equipment, and schedule. This includes exercise selection, sets,
+                            reps, and progression strategy.</strong>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
